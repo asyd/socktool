@@ -1,0 +1,29 @@
+[package]
+name = "socktool"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package.metadata.deb]
+maintainer = "Bruno Bonfils <asyd@asyd.net>"
+copyright = "Bruno Bonfils <asyd@asyd.net>"
+depends = "$auto"
+section = "utility"
+priority = "optional"
+
+[[bin]]
+name = "socktool"
+path = "src/socktool.rs"
+
+[dependencies]
+anyhow = "1.0.81"
+clap = { version = "4.5.3", features = ["derive"] }
+netlink-packet-core = "0.7.0"
+netlink-packet-sock-diag = "0.4.2"
+netlink-sys = "0.8.5"
+nix = { version = "0.28.0", features = ["sched"] }
+openat = "0.1.21"
+prettytable-rs = "0.10.0"
+regex = "1.10.3"
+whoami = "1.5.1"
